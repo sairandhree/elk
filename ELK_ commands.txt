@@ -1,0 +1,63 @@
+https://cloud.ibm.com/login?redirect=%2Fmanaged-solutions#/dashboard
+https://pages.github.ibm.com/IBM-Services-Platform/Digital-Experience/dash-access
+https://github.ibm.com/cacf/next/blob/master/extras/logstash/docker/next-tickets/pipeline/logstash.conf
+https://github.ibm.com/Continuous-Engineering/ansible-project-tower-job-metrics
+
+
+docker run --name some-mysql -p 3306:3306 -v C:\tools\ELK\data\mysql_db:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql
+docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' some-mysql
+
+docker run -it --rm mysql mysql -h 172.17.0.2 -P 3306 -uroot -pmy-secret-pw
+
+docker cp next.mysql 380a0f338cdd:.
+
+mysql -uroot -pmy-secret-pw 
+create database nextdb;
+mysql -uroot -pmy-secret-pw nextdb < next.mysql
+
+
+bin\elasticsearch.bat
+bin\kibana.bat
+bin\logstash.bat -f ..\data\apache.conf --config.reload.automatic
+
+bin\logstash.bat -f ..\data\next.conf
+
+GET ibm.cacf.next.incident-2021.05/_search
+{
+  "query": {
+    "match_all": {}
+  }
+}
+
+GET ibm.cacf.next.incident-2021.06/_doc/ibm.cacf-ATF_1612797004005
+{
+  "query": {
+    "match_all": {}
+  }
+}
+
+get *
+{
+  "query": {
+    "match_all": {}
+  }
+  
+}
+
+DELETE /logstash-2021.02.10-000001
+{
+  
+}
+
+
+
+
+
+https://w3.ibm.com/tools/cio/forms/secure/org/app/237b7fad-5a2e-45d4-8e86-c92eaa1bd23f/launch/index.html?form=F_QonnectThinkGridBlog
+https://w3.ibm.com/w3publisher/qonnectthinkgrid-2021
+https://w3.ibm.com/w3publisher/qonnectthinkgrid-2021/masterclass-submissions
+https://w3.ibm.com/w3publisher/qonnectthinkgrid-2021/masterclass-submissions
+https://w3.ibm.com/tools/cio/forms/secure/org/app/237b7fad-5a2e-45d4-8e86-c92eaa1bd23f/launch/index.html?form=F_QonnectThinkGrid_Do1
+https://w3.ibm.com/w3publisher/qonnectthinkgrid-2021
+
+
