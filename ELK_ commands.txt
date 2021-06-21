@@ -1,7 +1,5 @@
-https://cloud.ibm.com/login?redirect=%2Fmanaged-solutions#/dashboard
-https://pages.github.ibm.com/IBM-Services-Platform/Digital-Experience/dash-access
-https://github.ibm.com/cacf/next/blob/master/extras/logstash/docker/next-tickets/pipeline/logstash.conf
-https://github.ibm.com/Continuous-Engineering/ansible-project-tower-job-metrics
+
+https://github.com/codingexplained/data-processing-with-logstash/tree/master/data
 
 
 docker run --name some-mysql -p 3306:3306 -v C:\tools\ELK\data\mysql_db:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql
@@ -52,12 +50,5 @@ DELETE /logstash-2021.02.10-000001
 
 
 
-
-https://w3.ibm.com/tools/cio/forms/secure/org/app/237b7fad-5a2e-45d4-8e86-c92eaa1bd23f/launch/index.html?form=F_QonnectThinkGridBlog
-https://w3.ibm.com/w3publisher/qonnectthinkgrid-2021
-https://w3.ibm.com/w3publisher/qonnectthinkgrid-2021/masterclass-submissions
-https://w3.ibm.com/w3publisher/qonnectthinkgrid-2021/masterclass-submissions
-https://w3.ibm.com/tools/cio/forms/secure/org/app/237b7fad-5a2e-45d4-8e86-c92eaa1bd23f/launch/index.html?form=F_QonnectThinkGrid_Do1
-https://w3.ibm.com/w3publisher/qonnectthinkgrid-2021
 
 
