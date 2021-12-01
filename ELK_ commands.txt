@@ -49,6 +49,94 @@ DELETE /logstash-2021.02.10-000001
 
 
 
+put incidents/_doc/1
+{
+  "doc": {
+    "incedent_number": "1",
+    "customer_prefix": "ut1"
+  }
+}
 
+get incidents/_search
+
+put baseline/_doc/1
+{
+ 
+    "customer_prefix":"ut1",
+    "country": "abc",
+    "market":"ut1_market",
+    "sector": "ut1 sector"
+  
+}
+
+PUT /_ingest/pipeline/test_pipeline
+{
+  "processors": [
+     {
+      "lowercase": {
+        "field": "customer_prefix"
+      }
+    },
+    {
+      "set":{
+         "field": "my-boolean-field",
+        "value": false
+      }
+    },
+   {
+    "enrich": {
+      "policy_name": "test-enrich_processor",
+      "field": "customer_prefix",
+      "target_field": "enriched"
+    }
+   }
+  ]
+}
+
+
+put incidents/_doc/1?pipeline=test_pipeline
+{
+  "incedent_number": "1",
+  "customer_prefix": "ut1"
+}
+
+
+get incidents/_search
+
+delete /_ingest/pipeline/test_pipeline
+delete  /_enrich/policy/test-enrich_processor
+
+PUT /_enrich/policy/test-enrich_processor
+  {
+    "match": {
+      "indices": "baseline",
+      "match_field": "customer_prefix",
+      "enrich_fields": ["country","market","sector"]
+    }
+  }  
+  
+  
+PUT /_enrich/policy/test-enrich_processor/_execute  
+
+  
+  
+  
+  
+  
+
+
+POST /_ingest/pipeline/test_pipeline/_simulate
+{
+  "docs": [
+    {
+      "_index": "index",
+      "_id": "id",
+      "_source": {
+        "customer_prefix": "upt"
+      }
+    }
+   
+  ]
+}
 
 
